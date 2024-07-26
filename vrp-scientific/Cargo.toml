@@ -1,0 +1,16 @@
+[package]
+name = "vrp-scientific"
+description = "An extension logic for solving scientific VRP"
+version.workspace = true
+authors.workspace = true
+license.workspace = true
+keywords.workspace = true
+categories.workspace = true
+readme.workspace = true
+homepage.workspace = true
+repository.workspace = true
+edition.workspace = true
+
+[dependencies]
+vrp-core.workspace = true
+paste.workspace = true

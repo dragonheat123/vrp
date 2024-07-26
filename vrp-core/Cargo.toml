@@ -1,0 +1,23 @@
+[package]
+name = "vrp-core"
+description = "A core algorithms to solve a Vehicle Routing Problem"
+version.workspace = true
+authors.workspace = true
+license.workspace = true
+keywords.workspace = true
+categories.workspace = true
+readme.workspace = true
+homepage.workspace = true
+repository.workspace = true
+edition.workspace = true
+
+[dependencies]
+rosomaxa.workspace = true
+
+rand.workspace = true
+rayon.workspace = true
+rustc-hash.workspace = true
+paste.workspace = true
+
+nohash-hasher = "0.2.0"
+tinyvec = { version = "1.8.0", features = ["alloc"] }

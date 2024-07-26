@@ -1,0 +1,23 @@
+[package]
+name = "json-pragmatic"
+description = "A code example for solving rich VRP using vrp crates"
+publish = false
+version.workspace = true
+authors.workspace = true
+license.workspace = true
+keywords.workspace = true
+categories.workspace = true
+readme.workspace = true
+homepage.workspace = true
+repository.workspace = true
+edition.workspace = true
+
+[dependencies]
+vrp-pragmatic.workspace = true
+
+[dev-dependencies]
+criterion = "0.5.1"
+
+[[bench]]
+name = "general_benchmark"
+harness = false
