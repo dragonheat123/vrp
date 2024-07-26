@@ -469,6 +469,7 @@ fn get_environment(matches: &ArgMatches) -> GenericResult<Arc<Environment>> {
     let max_time = parse_int_value::<usize>(matches, TIME_ARG_NAME, "max time")?;
     let quota = Some(create_interruption_quota(max_time));
     let is_experimental = matches.get_one::<bool>(EXPERIMENTAL_ARG_NAME).copied().unwrap_or(false);
+    let random = Arc::new(DefaultRandom::new_with_seed(0));
 
     matches
         .get_one::<String>(PARALLELISM_ARG_NAME)
@@ -483,7 +484,8 @@ fn get_environment(matches: &ArgMatches) -> GenericResult<Arc<Environment>> {
                     Arc::new(|_: &str| {})
                 };
                 Ok(Arc::new(Environment::new(
-                    Arc::new(DefaultRandom::new_repeatable()),
+                    random.clone(),
+                    // Arc::new(DefaultRandom::new_repeatable()),
                     quota.clone(),
                     parallelism,
                     logger,
